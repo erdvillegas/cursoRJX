@@ -8,7 +8,7 @@ import { fromEvent, Observable } from 'rxjs';
  const src2$ = fromEvent<KeyboardEvent>(document,'keyup');
 
  const observer = {
-     next: val => console.log('[next] ',val)
+     next: (val: any) => console.log('[next] ',val)
  };
 
  src1$.subscribe(({x,y})=>{console.log(x,y)});

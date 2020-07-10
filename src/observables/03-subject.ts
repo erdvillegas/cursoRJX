@@ -25,7 +25,7 @@ const intervalo$ = new Observable<number>(subs => {
 
 /**
  * 1.- Casteo múltiple
- * 2.- Tambipen es un observer
+ * 2.- Tambien es un observer
  */
 const subject$ = new Subject<number>();
 const subscripcion = intervalo$.subscribe(subject$);

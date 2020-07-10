@@ -1,29 +1,11 @@
-import { range, fromEvent } from 'rxjs';
-import { map, pluck, mapTo } from 'rxjs/operators';
+import { range, Observer, from, fromEvent } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
-// MAP
-// range(1, 5).pipe(
-//     map<number, number>(val => val * 10)
-// )
-//     .subscribe(console.log)
+const observer: Observer<number> = {
+    next: value => console.log('siguiente [next]:', value),
+    error: error => console.warn('error [obs]', error),
+    complete: () => console.info('completado [obs]')
+};
 
-
-const keyup$ = fromEvent<KeyboardEvent>(document, 'keyup');
-
-const keyupCode$ = keyup$.pipe(
-    map(event => event.code)
-);
-
-const keyupPluck$ = keyup$.pipe(
-    pluck('target','baseURI')
-);
-
-const keyupMapto$ = keyup$.pipe(
-    mapTo('tecla presionada')
-);
-
-keyup$.subscribe(console.log);
-keyupCode$.subscribe(code => console.log('map', code));
-keyupPluck$.subscribe(code=>console.log('pluk',code));
-
-keyupMapto$.subscribe(code=>console.log('pluk',code));
+const numeros$ = range(1,5);
+numeros$.subscribe( val => );
