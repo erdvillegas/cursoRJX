@@ -1,8 +1,8 @@
 import { asyncScheduler } from 'rxjs';
 
 const observer = {
-    next: valor => console.log("[next]: ", valor),
-    error: valor => console.error("[error]: ", valor),
+    next: (valor: any) => console.log("[next]: ", valor),
+    error: (valor: any) => console.error("[error]: ", valor),
     complete: () => console.log("completed")
 };
 
