@@ -28,7 +28,7 @@ import { map } from "rxjs/operators";
   //   console.log( capitalizar(nombre) )
   // }
 
-  from(nombres).pipe(map(capitalizar)).subscribe(console.log);
+  const lista$ = of(...nombres).pipe(map(capitalizar)).subscribe(console.log);
 
 
 
